@@ -1,0 +1,48 @@
+@use '../abstracts/' as *;
+
+.header{
+    &__nav{
+        @include flexBox1;
+    }
+
+    &__hamburger-menu{
+        cursor: pointer;
+    }
+    &__hamburger-close{
+        display:none;
+    }
+
+    &__menu-list{
+        position:absolute;
+        width:15rem;
+        border-radius:3px;
+        // box-shadow:0 16px 16px rgba(0,0,0,0.05);    
+        right:2rem;
+        top:5rem;
+        padding:1rem;
+        background:linear-gradient(
+            90deg,
+            $primary,
+            $secondary,
+            $primary
+        );
+        @include flexBox2;
+        gap:1rem;
+       
+
+        & li{
+            text-transform: capitalize;
+            font-size:$font-size-normal;
+            font-family:'Courier New', Courier, monospace;
+            & a{
+                color:$white;
+            }
+        }
+
+        display:none;
+    }
+    &__menu-list.active{
+        display:flex;
+    }
+
+}
